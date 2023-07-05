@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { Avatar, Box, Button, Grid, Link, Paper, TextField, Typography } from "@mui/material";
+import { Avatar, Box, Grid, Link, Paper, TextField, Typography } from "@mui/material";
+import { LoadingButton } from "@mui/lab";
 import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import CloudUploadIcon from "@mui/icons-material/CloudUpload";
 import { useFormik } from "formik";
@@ -208,15 +209,15 @@ export default function AppRegister() {
               )}
             </Grid>
 
-            <Button
+            <LoadingButton
               type="submit"
               fullWidth
               variant="contained"
-              disabled={isLoading}
+              loading={isLoading}
               sx={{ mt: 3, mb: 2 }}
             >
               Sign Up
-            </Button>
+            </LoadingButton>
             <Grid container justifyContent="flex-end">
               <Grid item>
                 <Link href="/login" variant="body2">

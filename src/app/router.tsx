@@ -5,6 +5,7 @@ import Signup from "../features/auth/Register";
 import AuthGuard from "../features/core/guards/AuthGuard";
 import Profile from "../features/profile/Profile";
 import PageNotFound from "../features/core/page-not-found/PageNotFound";
+import RegisterSuccess from "../features/auth/RegisterSuccess";
 
 export const router = createBrowserRouter([
   // Protected Routes
@@ -24,7 +25,16 @@ export const router = createBrowserRouter([
   },
   {
     path: "register",
-    element: <Signup />,
+    children: [
+      {
+        path: "",
+        element: <Signup />,
+      },
+      {
+        path: "success",
+        element: <RegisterSuccess />,
+      },
+    ],
   },
 
   // Unknown Page

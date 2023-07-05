@@ -48,7 +48,7 @@ export const register = async (data: RegisterInfo) => {
       },
     });
     dispatch(setLoading(false));
-    window.location.href = "/login";
+    window.location.href = "/register/success";
   } catch (err: any) {
     console.error(err);
 
