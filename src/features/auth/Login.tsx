@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Navigate } from "react-router-dom";
-import { Avatar, Box, Button, Grid, Link, Paper, TextField, Typography } from "@mui/material";
+import { Avatar, Box, Grid, Link, Paper, TextField, Typography } from "@mui/material";
+import { LoadingButton } from "@mui/lab";
 import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import { useAppSelector } from "../../app/hooks";
 import { selectIsAuthenticated, selectLoading } from "./auth.slice";
@@ -100,15 +101,15 @@ export default function AppLogin() {
               value={formData.password}
               onChange={handleFormChange}
             />
-            <Button
+            <LoadingButton
               type="submit"
               fullWidth
               variant="contained"
-              disabled={isLoading}
+              loading={isLoading}
               sx={{ mt: 3, mb: 2 }}
             >
               Sign In
-            </Button>
+            </LoadingButton>
             <Grid container>
               <Grid item>
                 <Link href="register" variant="body2">
